@@ -7,8 +7,7 @@
     community.docker.docker_container:
       image: tomcat:9.0
       name: tomcat
-      recreate: true
-      state: started
+      state: present
       ports:
         - "8080:8080"
   
@@ -34,7 +33,7 @@
       ports:
         - "80:80"
  
-   - name: Copy nginx.conf into nginx
+  - name: Copy nginx.conf into nginx
     community.docker.docker_container_copy_into:
       container: nginx
       path: nginx.conf
