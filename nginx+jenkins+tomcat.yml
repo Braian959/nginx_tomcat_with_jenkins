@@ -68,8 +68,8 @@
     ansible.builtin.cron:
       name: backup nginx config
       weekday: "*"
-      hour: "*"
-      minute: "*"
+      hour: "22"
+      minute: "0"
       user: root
       job: "/bin/bash /nginx/config-backup/backup-script.sh"
       cron_file: nginx-backup-config
